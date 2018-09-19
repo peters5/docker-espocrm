@@ -7,7 +7,13 @@ EspoCRM Docker image with nginx and PHP 7.2. For now, the installation wizard ha
 Run
 ------
 
-The docker-compose file creates and attaches a MySQL database container. The database password can be set by copying `.env.dist` to `.env` and changing the password variable. Run this command afterwards:
+The docker-compose file creates and attaches a MySQL database container. The database password can be set by copying `.env.dist` to `.env` and changing the password variable. Go to the repository directory for all steps.
+
+##### 1. Build Docker image
+
+    docker build -t "espocrm" .
+
+##### 2. Start containers
 
     docker-compose up
 
