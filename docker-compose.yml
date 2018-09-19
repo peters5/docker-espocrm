@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  espocrm:
+    image: espocrm:latest
+    depends_on:
+      - mysql
+    volumes:
+      - ./espocrm-data:/var/www/espocrm/data
+    ports:
+      - "10081:80"
+
+  mysql:
+    image: percona:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:?MYSQL_ROOT_PASSWORD is not set or empty}
+      - MYSQL_DATABASE=espocrm
+      - MYSQL_USER=espocrm
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD:?MYSQL_PASSWORD is not set or empty}
+    volumes:
+      - ./mysql-data:/var/lib/mysql:rw,delegated
