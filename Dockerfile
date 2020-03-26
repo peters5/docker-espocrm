@@ -2,7 +2,7 @@ FROM richarvey/nginx-php-fpm:latest
 
 LABEL maintainer="Peter Sammer"
 
-ARG ESPO_VERSION=5.4.3
+ARG ESPO_VERSION=5.8.4
 
 ENV php_vars /usr/local/etc/php/conf.d/docker-vars.ini
 ENV PROJECT_PATH=/var/www/espocrm
